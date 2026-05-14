@@ -9,107 +9,129 @@
 </head>
 <body>
 
+    <!-- ÜST BAR -->
     <header class="header">
-        <div class="logo-section">
-            <i class="fas fa-bars menu-icon"></i>
-            <h2 class="brand-logo">Synox<span>Tube</span></h2>
+        <div class="left">
+            <i class="fas fa-bars"></i>
+            <div class="logo"><i class="fab fa-youtube" style="color: #0055ff;"></i> SynoxTube</div>
         </div>
-        <div class="search-section">
-            <form action="https://www.youtube.com/results" target="_blank">
-                <input type="text" name="search_query" placeholder="Ara">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <i class="fas fa-microphone mic-icon"></i>
+        <div class="center">
+            <div class="search-box">
+                <input type="text" placeholder="Ara">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="mic"><i class="fas fa-microphone"></i></div>
         </div>
-        <div class="icons-section">
+        <div class="right">
             <i class="fas fa-video"></i>
             <i class="fas fa-bell"></i>
-            <div class="user-avatar"></div>
+            <div class="user-pic"></div>
         </div>
     </header>
 
-    <main class="container">
+    <div class="main-body">
+        <!-- SOL SIDEBAR -->
         <aside class="sidebar">
-            <div class="nav-item active"><i class="fas fa-home"></i> <span>Ana Sayfa</span></div>
-            <div class="nav-item"><i class="fab fa-youtube"></i> <span>Shorts</span></div>
-            <div class="nav-item"><i class="fas fa-subscriptions"></i> <span>Abonelikler</span></div>
+            <div class="side-item active"><i class="fas fa-home"></i> <span>Ana Sayfa</span></div>
+            <div class="side-item"><i class="fab fa-youtube"></i> <span>Shorts</span></div>
             <hr>
-            <div class="nav-item"><i class="fas fa-history"></i> <span>Geçmiş</span></div>
+            <div class="section-title">Abonelikler ></div>
+            <div class="side-item"><div class="channel-pic"></div> <span>Xoex-MC</span></div>
+            <div class="side-item"><div class="channel-pic"></div> <span>sotkakok</span></div>
+            <div class="side-item"><div class="channel-pic"></div> <span>MrBeast</span></div>
+            <hr>
+            <div class="section-title">Siz ></div>
+            <div class="side-item"><i class="fas fa-user-square"></i> <span>Kanalınız</span></div>
+            <div class="side-item"><i class="fas fa-history"></i> <span>Geçmiş</span></div>
+            <div class="side-item"><i class="fas fa-play-circle"></i> <span>Videolarınız</span></div>
         </aside>
 
-        <section class="main-content">
-            <!-- SHORTS BÖLÜMÜ -->
-            <h2 class="section-title"><i class="fab fa-youtube" style="color: #0055ff;"></i> Shorts</h2>
-            <div class="shorts-container">
-                <!-- Short 1 -->
-                <div class="short-card">
-                    <iframe src="https://www.youtube.com/embed/S9uTAtV5ZUA?controls=0" frameborder="0"></iframe>
-                    <p>Harika Bir Manzara</p>
-                    <span>1.2 Mn izlenme</span>
-                </div>
-                <!-- Short 2 -->
-                <div class="short-card">
-                    <iframe src="https://www.youtube.com/embed/n9Y9k_i5_pE?controls=0" frameborder="0"></iframe>
-                    <p>Hızlı Yazılım İpuçları</p>
-                    <span>800 B izlenme</span>
-                </div>
-                <!-- Short 3 -->
-                <div class="short-card">
-                    <iframe src="https://www.youtube.com/embed/rN9S6u8Y4Xk?controls=0" frameborder="0"></iframe>
-                    <p>Komik Kedi Anları</p>
-                    <span>2 Mn izlenme</span>
-                </div>
-                <!-- Short 4 -->
-                <div class="short-card">
-                    <iframe src="https://www.youtube.com/embed/M0p-lT3NisI?controls=0" frameborder="0"></iframe>
-                    <p>Setup Turu 2024</p>
-                    <span>50 B izlenme</span>
-                </div>
+        <!-- İÇERİK ALANI -->
+        <main class="content">
+            <!-- ÜST ETİKETLER (CHIPS) -->
+            <div class="chips-wrapper">
+                <div class="chip active">Tümü</div>
+                <div class="chip">Oyun</div>
+                <div class="chip">Müzik</div>
+                <div class="chip">Canlı</div>
+                <div class="chip">Platform oyunları</div>
+                <div class="chip">Çizgi filmler</div>
+                <div class="chip">Son yüklenenler</div>
             </div>
 
-            <hr class="section-divider">
-
-            <!-- VİDEOLAR BÖLÜMÜ -->
-            <h2 class="section-title">Önerilen Videolar</h2>
+            <!-- VİDEO IZGARASI -->
             <div class="video-grid">
-                <!-- Video 1 -->
+                <!-- Video 1 (Resimdeki Marty videosu temsili) -->
                 <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                        <div class="thumbnail">
-                            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Thumbnail">
-                            <span class="duration">03:32</span>
-                        </div>
-                    </a>
-                    <div class="video-info">
-                        <div class="author-img" style="background-color: #0055ff;"></div>
-                        <div class="title-data">
-                            <h3>Efsane Müzik Klibi - Synox Exclusive</h3>
-                            <p class="author">Synox Music</p>
-                            <p class="stats">2.5 Mr İzlenme • 10 yıl önce</p>
+                    <div class="thumb">
+                        <img src="https://picsum.photos/seed/v1/320/180" alt="">
+                        <span class="time">1:19</span>
+                    </div>
+                    <div class="v-details">
+                        <div class="v-avatar"></div>
+                        <div class="v-text">
+                            <h4>Marty, what's you think? It's Trey Benson.</h4>
+                            <p>Made To Be Heard</p>
+                            <p>Sponsorlu • JBL</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Video 2 -->
+                <!-- Video 2 (Roblox/Backrooms temsili) -->
                 <div class="video-card">
-                    <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">
-                        <div class="thumbnail">
-                            <img src="https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg" alt="Thumbnail">
-                            <span class="duration">10:15</span>
+                    <div class="thumb">
+                        <img src="https://picsum.photos/seed/v2/320/180" alt="">
+                        <span class="time">16:24</span>
+                    </div>
+                    <div class="v-details">
+                        <div class="v-avatar"></div>
+                        <div class="v-text">
+                            <h4>SIFIRDAN 24 SAATTE BACKROOMS TÜM BRAINROTLARI ÇALDIM!</h4>
+                            <p>sotkakok</p>
+                            <p>6,1 B görüntüleme • 59 dakika önce</p>
                         </div>
-                    </a>
-                    <div class="video-info">
-                        <div class="author-img" style="background-color: #333;"></div>
-                        <div class="title-data">
-                            <h3>Yapay Zeka ile Kodlama Geleceği</h3>
-                            <p class="author">Synox AI</p>
-                            <p class="stats">140 B İzlenme • 2 gün önce</p>
+                    </div>
+                </div>
+
+                <!-- Video 3 (NPC temsili) -->
+                <div class="video-card">
+                    <div class="thumb">
+                        <img src="https://picsum.photos/seed/v3/320/180" alt="">
+                        <span class="time">8:19</span>
+                    </div>
+                    <div class="v-details">
+                        <div class="v-avatar"></div>
+                        <div class="v-text">
+                            <h4>GERÇEKTEN NPC Mİ? | Digital Circus</h4>
+                            <p>Luzli?</p>
+                            <p>36 B görüntüleme • 10 gün önce</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 (Kart Takası temsili) -->
+                <div class="video-card">
+                    <div class="thumb">
+                        <img src="https://picsum.photos/seed/v4/320/180" alt="">
+                        <span class="time">12:39</span>
+                    </div>
+                    <div class="v-details">
+                        <div class="v-avatar"></div>
+                        <div class="v-text">
+                            <h4>Sadece Kart Takasıyla Neler Alınabilir?</h4>
+                            <p>Aycan Edman</p>
+                            <p>44 B görüntüleme • 1 gün önce</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+
+            <!-- SHORTS BAŞLIĞI -->
+            <div class="shorts-header">
+                <i class="fab fa-youtube" style="color: #0055ff;"></i> SynoxTube Shorts
+            </div>
+        </main>
+    </div>
 
 </body>
 </html>
