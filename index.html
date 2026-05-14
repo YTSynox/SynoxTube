@@ -2,80 +2,90 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>SynoxTube - Video Yükle ve İzle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynoxTube</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- ÜST NAVİGASYON -->
     <header class="header">
-        <div class="left">
-            <i class="fas fa-bars"></i>
-            <div class="logo"><i class="fab fa-youtube" style="color: #0055ff;"></i> SynoxTube</div>
+        <div class="header-left">
+            <i class="fas fa-bars menu-btn"></i>
+            <div class="logo">
+                <i class="fab fa-youtube" style="color: #0055ff;"></i>
+                <span>SynoxTube</span>
+            </div>
         </div>
-        <div class="center">
-            <div class="search-box">
+        
+        <div class="header-center">
+            <div class="search-container">
                 <input type="text" placeholder="Ara">
                 <button><i class="fas fa-search"></i></button>
             </div>
+            <div class="mic-btn"><i class="fas fa-microphone"></i></div>
         </div>
-        <div class="right">
-            <!-- VİDEO YÜKLEME BUTONU -->
-            <button id="uploadBtn" class="upload-btn"><i class="fas fa-video"></i> Oluştur</button>
+
+        <div class="header-right">
+            <i class="fas fa-video" title="Oluştur" id="uploadTrigger"></i>
             <i class="fas fa-bell"></i>
-            <div class="user-pic"></div>
+            <div class="user-profile"></div>
         </div>
     </header>
 
-    <div class="main-body">
+    <div class="container">
+        <!-- SOL MENÜ (SIDEBAR) -->
         <aside class="sidebar">
-            <div class="side-item active"><i class="fas fa-home"></i> <span>Ana Sayfa</span></div>
-            <div class="side-item"><i class="fab fa-youtube"></i> <span>Shorts</span></div>
+            <div class="nav-link active"><i class="fas fa-home"></i> <span>Ana Sayfa</span></div>
+            <div class="nav-link"><i class="fab fa-youtube"></i> <span>Shorts</span></div>
+            <div class="nav-link"><i class="fas fa-layer-group"></i> <span>Abonelikler</span></div>
             <hr>
-            <div class="section-title">Kitaplık</div>
-            <div class="side-item"><i class="fas fa-history"></i> <span>Geçmiş</span></div>
+            <div class="sidebar-label">Siz ></div>
+            <div class="nav-link"><i class="fas fa-id-badge"></i> <span>Kanalınız</span></div>
+            <div class="nav-link"><i class="fas fa-history"></i> <span>Geçmiş</span></div>
+            <div class="nav-link"><i class="fas fa-play-circle"></i> <span>Videolarınız</span></div>
+            <div class="nav-link"><i class="fas fa-clock"></i> <span>Daha sonra izle</span></div>
         </aside>
 
-        <main class="content">
-            <div class="chips-wrapper">
-                <div class="chip active">Tümü</div>
-                <div class="chip">Yüklediklerim</div>
+        <!-- ANA İÇERİK -->
+        <main class="main-content">
+            <!-- KATEGORİ ETİKETLERİ -->
+            <div class="tags-bar">
+                <div class="tag active">Tümü</div>
+                <div class="tag">Oyun</div>
+                <div class="tag">Müzik</div>
+                <div class="tag">Canlı</div>
+                <div class="tag">Mix'ler</div>
+                <div class="tag">Haberler</div>
+                <div class="tag">Yazılım</div>
+                <div class="tag">Matematik</div>
             </div>
-            <!-- VİDEOLARIN SIRALANACAĞI ALAN -->
-            <div class="video-grid" id="videoGrid"></div>
-        </main>
-    </div>
 
-    <!-- VİDEO İZLEME PANELİ (MODAL) -->
-    <div id="videoPlayerModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="player-container">
-                <video id="mainVideo" controls autoplay></video>
-                <h2 id="videoTitle">Video Başlığı</h2>
-                <div class="video-stats">123.456 izlenme • Şimdi yüklendi</div>
-                <hr>
-                <div class="comments-section">
-                    <h3>Yorumlar</h3>
-                    <div class="add-comment">
-                        <div class="user-pic"></div>
-                        <input type="text" placeholder="Yorum ekleyin...">
+            <!-- VİDEO IZGARASI -->
+            <div class="video-grid" id="mainGrid">
+                <!-- Örnek Video (image_8570ff.jpg'deki gibi) -->
+                <div class="video-item">
+                    <div class="thumbnail-box">
+                        <img src="https://picsum.photos/seed/yt1/320/180" alt="Thumbnail">
+                        <span class="video-time">10:45</span>
                     </div>
-                    <div class="comment">
-                        <div class="user-pic"></div>
-                        <div>
-                            <strong>Kullanıcı 1</strong>
-                            <p>Harika bir video olmuş, ellerine sağlık!</p>
+                    <div class="video-data">
+                        <div class="chan-img"></div>
+                        <div class="chan-text">
+                            <h3>SynoxTube Arayüz Tasarımı Yayında!</h3>
+                            <p>Synox Design</p>
+                            <p>120 B görüntüleme • 2 saat önce</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
     </div>
 
-    <!-- DOSYA SEÇME GİRDİLERİ (GİZLİ) -->
-    <input type="file" id="videoInput" accept="video/*" style="display:none">
-    <input type="file" id="imageInput" accept="image/*" style="display:none">
+    <!-- DOSYA SEÇİCİLER (Gizli) -->
+    <input type="file" id="vFile" accept="video/*" style="display:none">
+    <input type="file" id="iFile" accept="image/*" style="display:none">
 
     <script src="script.js"></script>
 </body>
