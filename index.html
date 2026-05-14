@@ -2,14 +2,12 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SynoxTube</title>
+    <title>SynoxTube - Video Yükle ve İzle</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- ÜST BAR -->
     <header class="header">
         <div class="left">
             <i class="fas fa-bars"></i>
@@ -20,118 +18,65 @@
                 <input type="text" placeholder="Ara">
                 <button><i class="fas fa-search"></i></button>
             </div>
-            <div class="mic"><i class="fas fa-microphone"></i></div>
         </div>
         <div class="right">
-            <i class="fas fa-video"></i>
+            <!-- VİDEO YÜKLEME BUTONU -->
+            <button id="uploadBtn" class="upload-btn"><i class="fas fa-video"></i> Oluştur</button>
             <i class="fas fa-bell"></i>
             <div class="user-pic"></div>
         </div>
     </header>
 
     <div class="main-body">
-        <!-- SOL SIDEBAR -->
         <aside class="sidebar">
             <div class="side-item active"><i class="fas fa-home"></i> <span>Ana Sayfa</span></div>
             <div class="side-item"><i class="fab fa-youtube"></i> <span>Shorts</span></div>
             <hr>
-            <div class="section-title">Abonelikler ></div>
-            <div class="side-item"><div class="channel-pic"></div> <span>Xoex-MC</span></div>
-            <div class="side-item"><div class="channel-pic"></div> <span>sotkakok</span></div>
-            <div class="side-item"><div class="channel-pic"></div> <span>MrBeast</span></div>
-            <hr>
-            <div class="section-title">Siz ></div>
-            <div class="side-item"><i class="fas fa-user-square"></i> <span>Kanalınız</span></div>
+            <div class="section-title">Kitaplık</div>
             <div class="side-item"><i class="fas fa-history"></i> <span>Geçmiş</span></div>
-            <div class="side-item"><i class="fas fa-play-circle"></i> <span>Videolarınız</span></div>
         </aside>
 
-        <!-- İÇERİK ALANI -->
         <main class="content">
-            <!-- ÜST ETİKETLER (CHIPS) -->
             <div class="chips-wrapper">
                 <div class="chip active">Tümü</div>
-                <div class="chip">Oyun</div>
-                <div class="chip">Müzik</div>
-                <div class="chip">Canlı</div>
-                <div class="chip">Platform oyunları</div>
-                <div class="chip">Çizgi filmler</div>
-                <div class="chip">Son yüklenenler</div>
+                <div class="chip">Yüklediklerim</div>
             </div>
-
-            <!-- VİDEO IZGARASI -->
-            <div class="video-grid">
-                <!-- Video 1 (Resimdeki Marty videosu temsili) -->
-                <div class="video-card">
-                    <div class="thumb">
-                        <img src="https://picsum.photos/seed/v1/320/180" alt="">
-                        <span class="time">1:19</span>
-                    </div>
-                    <div class="v-details">
-                        <div class="v-avatar"></div>
-                        <div class="v-text">
-                            <h4>Marty, what's you think? It's Trey Benson.</h4>
-                            <p>Made To Be Heard</p>
-                            <p>Sponsorlu • JBL</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video 2 (Roblox/Backrooms temsili) -->
-                <div class="video-card">
-                    <div class="thumb">
-                        <img src="https://picsum.photos/seed/v2/320/180" alt="">
-                        <span class="time">16:24</span>
-                    </div>
-                    <div class="v-details">
-                        <div class="v-avatar"></div>
-                        <div class="v-text">
-                            <h4>SIFIRDAN 24 SAATTE BACKROOMS TÜM BRAINROTLARI ÇALDIM!</h4>
-                            <p>sotkakok</p>
-                            <p>6,1 B görüntüleme • 59 dakika önce</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video 3 (NPC temsili) -->
-                <div class="video-card">
-                    <div class="thumb">
-                        <img src="https://picsum.photos/seed/v3/320/180" alt="">
-                        <span class="time">8:19</span>
-                    </div>
-                    <div class="v-details">
-                        <div class="v-avatar"></div>
-                        <div class="v-text">
-                            <h4>GERÇEKTEN NPC Mİ? | Digital Circus</h4>
-                            <p>Luzli?</p>
-                            <p>36 B görüntüleme • 10 gün önce</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video 4 (Kart Takası temsili) -->
-                <div class="video-card">
-                    <div class="thumb">
-                        <img src="https://picsum.photos/seed/v4/320/180" alt="">
-                        <span class="time">12:39</span>
-                    </div>
-                    <div class="v-details">
-                        <div class="v-avatar"></div>
-                        <div class="v-text">
-                            <h4>Sadece Kart Takasıyla Neler Alınabilir?</h4>
-                            <p>Aycan Edman</p>
-                            <p>44 B görüntüleme • 1 gün önce</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SHORTS BAŞLIĞI -->
-            <div class="shorts-header">
-                <i class="fab fa-youtube" style="color: #0055ff;"></i> SynoxTube Shorts
-            </div>
+            <!-- VİDEOLARIN SIRALANACAĞI ALAN -->
+            <div class="video-grid" id="videoGrid"></div>
         </main>
     </div>
 
+    <!-- VİDEO İZLEME PANELİ (MODAL) -->
+    <div id="videoPlayerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="player-container">
+                <video id="mainVideo" controls autoplay></video>
+                <h2 id="videoTitle">Video Başlığı</h2>
+                <div class="video-stats">123.456 izlenme • Şimdi yüklendi</div>
+                <hr>
+                <div class="comments-section">
+                    <h3>Yorumlar</h3>
+                    <div class="add-comment">
+                        <div class="user-pic"></div>
+                        <input type="text" placeholder="Yorum ekleyin...">
+                    </div>
+                    <div class="comment">
+                        <div class="user-pic"></div>
+                        <div>
+                            <strong>Kullanıcı 1</strong>
+                            <p>Harika bir video olmuş, ellerine sağlık!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOSYA SEÇME GİRDİLERİ (GİZLİ) -->
+    <input type="file" id="videoInput" accept="video/*" style="display:none">
+    <input type="file" id="imageInput" accept="image/*" style="display:none">
+
+    <script src="script.js"></script>
 </body>
 </html>
