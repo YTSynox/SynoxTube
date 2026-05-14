@@ -12,18 +12,15 @@
     <header class="header">
         <div class="logo-section">
             <i class="fas fa-bars menu-icon"></i>
-            <!-- Logo kısmını yazı olarak güncelledik -->
             <h2 class="brand-logo">Synox<span>Tube</span></h2>
         </div>
-        
         <div class="search-section">
-            <form action="">
-                <input type="text" placeholder="Ara">
-                <button><i class="fas fa-search"></i></button>
+            <form action="https://www.youtube.com/results" target="_blank">
+                <input type="text" name="search_query" placeholder="Ara">
+                <button type="submit"><i class="fas fa-search"></i></button>
             </form>
             <i class="fas fa-microphone mic-icon"></i>
         </div>
-
         <div class="icons-section">
             <i class="fas fa-video"></i>
             <i class="fas fa-bell"></i>
@@ -38,20 +35,76 @@
             <div class="nav-item"><i class="fas fa-subscriptions"></i> <span>Abonelikler</span></div>
             <hr>
             <div class="nav-item"><i class="fas fa-history"></i> <span>Geçmiş</span></div>
-            <div class="nav-item"><i class="fas fa-clock"></i> <span>Daha sonra izle</span></div>
         </aside>
 
-        <section class="video-grid">
-            <div class="video-card">
-                <div class="thumbnail">
-                    <img src="https://via.placeholder.com/320x180/0055ff/ffffff?text=SynoxTube+Video" alt="Thumbnail">
+        <section class="main-content">
+            <!-- SHORTS BÖLÜMÜ -->
+            <h2 class="section-title"><i class="fab fa-youtube" style="color: #0055ff;"></i> Shorts</h2>
+            <div class="shorts-container">
+                <!-- Short 1 -->
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/S9uTAtV5ZUA?controls=0" frameborder="0"></iframe>
+                    <p>Harika Bir Manzara</p>
+                    <span>1.2 Mn izlenme</span>
                 </div>
-                <div class="video-info">
-                    <div class="author-img"></div>
-                    <div class="title-data">
-                        <h3>SynoxTube ile Geleceğin Web Tasarımı</h3>
-                        <p class="author">Synox Tasarım</p>
-                        <p class="stats">500 B İzlenme • 1 saat önce</p>
+                <!-- Short 2 -->
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/n9Y9k_i5_pE?controls=0" frameborder="0"></iframe>
+                    <p>Hızlı Yazılım İpuçları</p>
+                    <span>800 B izlenme</span>
+                </div>
+                <!-- Short 3 -->
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/rN9S6u8Y4Xk?controls=0" frameborder="0"></iframe>
+                    <p>Komik Kedi Anları</p>
+                    <span>2 Mn izlenme</span>
+                </div>
+                <!-- Short 4 -->
+                <div class="short-card">
+                    <iframe src="https://www.youtube.com/embed/M0p-lT3NisI?controls=0" frameborder="0"></iframe>
+                    <p>Setup Turu 2024</p>
+                    <span>50 B izlenme</span>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- VİDEOLAR BÖLÜMÜ -->
+            <h2 class="section-title">Önerilen Videolar</h2>
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                        <div class="thumbnail">
+                            <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Thumbnail">
+                            <span class="duration">03:32</span>
+                        </div>
+                    </a>
+                    <div class="video-info">
+                        <div class="author-img" style="background-color: #0055ff;"></div>
+                        <div class="title-data">
+                            <h3>Efsane Müzik Klibi - Synox Exclusive</h3>
+                            <p class="author">Synox Music</p>
+                            <p class="stats">2.5 Mr İzlenme • 10 yıl önce</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <a href="https://www.youtube.com/watch?v=ScMzIvxBSi4" target="_blank">
+                        <div class="thumbnail">
+                            <img src="https://img.youtube.com/vi/ScMzIvxBSi4/maxresdefault.jpg" alt="Thumbnail">
+                            <span class="duration">10:15</span>
+                        </div>
+                    </a>
+                    <div class="video-info">
+                        <div class="author-img" style="background-color: #333;"></div>
+                        <div class="title-data">
+                            <h3>Yapay Zeka ile Kodlama Geleceği</h3>
+                            <p class="author">Synox AI</p>
+                            <p class="stats">140 B İzlenme • 2 gün önce</p>
+                        </div>
                     </div>
                 </div>
             </div>
